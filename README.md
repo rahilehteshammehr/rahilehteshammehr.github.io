@@ -6,18 +6,7 @@ The website brings together research and projects, a CV, and stories from chess 
 
 ## Updating the website
 
-**Start with the [editing guide](docs/EDITING.md).** It explains how to make changes directly on GitHub, add stories and photos, and update the CV. No local installation is needed for everyday edits.
-
-| To change… | Open… |
-| --- | --- |
-| Introduction, interests, contact details, or portrait | [`_data/profile.json`](_data/profile.json) |
-| Education, awards, teaching, or skills | [`_data/cv.json`](_data/cv.json) |
-| Research and projects | [`_projects/`](_projects/) |
-| Beyond Physics stories | [`_posts/`](_posts/) |
-| Homepage news | [`_data/news.yml`](_data/news.yml) |
-| Photographs | [`assets/images/`](assets/images/) |
-
-For publishing setup, local previews, or code changes, see [technical maintenance](docs/DEVELOPMENT.md).
+Follow the [complete website guide](docs/EDITING.md): set up your computer, edit the files, preview the result, and publish to GitHub Pages. The guide keeps the whole workflow in one place, with local editing as the default.
 
 ## Credits
 
