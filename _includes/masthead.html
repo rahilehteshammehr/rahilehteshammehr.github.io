@@ -1,0 +1,15 @@
+<header class="masthead">
+  <nav class="site-navigation" aria-label="Main navigation">
+    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-links" aria-expanded="false" hidden>{% include icon.html name='menu' %}</button>
+    <div class="site-links" id="site-links">
+    {% for item in site.data.navigation.main %}
+      <a href="{{ item.url | relative_url }}"{% if page.nav == item.key %} aria-current="{% if page.collection == 'projects' or page.collection == 'posts' %}true{% else %}page{% endif %}"{% endif %}>{{ item.title }}</a>
+    {% endfor %}
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme" hidden>
+      <span class="theme-moon">{% include icon.html name='moon' %}</span>
+      <span class="theme-sun">{% include icon.html name='sun' %}</span>
+    </button>
+  </nav>
+</header>

@@ -1,0 +1,19 @@
+{
+  "name": "rahil-academic-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "bash scripts/jekyll.sh install",
+    "build": "bash scripts/jekyll.sh build",
+    "dev": "bash scripts/jekyll.sh serve --host 127.0.0.1 --port 4000",
+    "dev:drafts": "bash scripts/jekyll.sh serve --host 127.0.0.1 --port 4000 --unpublished --future",
+    "new:post": "python3 scripts/new_content.py post",
+    "new:project": "python3 scripts/new_content.py project",
+    "new:page": "python3 scripts/new_content.py page",
+    "setup:cv": "bash scripts/cv.sh setup",
+    "cv": "bash scripts/cv.sh",
+    "test:cv": "python3 scripts/test_cv_selection.py",
+    "validate": "npm run build && npm run check",
+    "check": "python3 scripts/check_site.py _site"
+  }
+}

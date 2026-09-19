@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="academic-layout">
+  {% include author-profile.html %}
+  <main id="main" class="page" tabindex="-1">
+    <article class="page__inner-wrap">
+      <a class="back-link" href="{{ '/research/' | relative_url }}">All research &amp; projects</a>
+      <header class="page-header"><h1 class="page__title">{{ page.title | escape }}</h1></header>
+      <dl class="project-facts">
+        <div><dt>Type</dt><dd>{{ page.category }}</dd></div>
+        <div><dt>When</dt><dd>{{ page.period }}</dd></div>
+        <div><dt>Field</dt><dd>{{ page.field }}</dd></div>
+        {% if page.supervisor %}<div><dt>Supervisor{% if page.supervisor contains ' and ' %}s{% endif %}</dt><dd>{% if page.supervisor_url and page.supervisor_url != '' %}<a href="{{ page.supervisor_url }}">{{ page.supervisor }}</a>{% else %}{{ page.supervisor }}{% endif %}</dd></div>{% endif %}
+      </dl>
+      <div class="page__content">
+        <p class="project-summary">{{ page.summary }}</p>
+        {{ content }}
+        {% unless content contains 'class="post-gallery"' %}
+          {% include post-gallery.html label='Project photographs' %}
+        {% endunless %}
+        <ul class="topic-list" aria-label="Topics">{% for topic in page.topics %}<li>{{ topic }}</li>{% endfor %}</ul>
+        <div class="project-contact"><h2>Get in touch</h2><p>Interested in this work? <a href="mailto:{{ site.data.profile.email }}">Contact me by email</a>.</p></div>
+      </div>
+    </article>
+  </main>
+</div>

@@ -1,0 +1,13 @@
+main:
+  - title: About
+    url: /
+    key: about
+  - title: Research & Projects
+    url: /research/
+    key: research
+  - title: CV
+    url: /cv/
+    key: cv
+  - title: Beyond Physics
+    url: /beyond-physics/
+    key: beyond

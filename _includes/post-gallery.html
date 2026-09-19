@@ -1,0 +1,14 @@
+{% assign photos = page.photos %}
+{% if include.group %}{% assign photos = photos | where: 'group', include.group %}{% endif %}
+{% if photos.size > 0 %}
+<div class="post-gallery" data-post-gallery data-layout="{{ include.layout | default: page.gallery.layout | default: 'featured' | escape }}" data-columns="{{ include.columns | default: page.gallery.columns | default: 2 | escape }}" data-size="{{ include.width | default: page.gallery.width | default: 'full' | escape }}" data-fit="{{ include.fit | default: page.gallery.fit | default: 'original' | escape }}" role="group" aria-label="{{ include.label | default: 'Photographs' | escape }}">
+  {% for photo in photos %}
+  <figure class="post-photo"{% if photo.span == 'full' %} data-span="full"{% endif %} data-fit="{{ photo.fit | default: include.fit | default: page.gallery.fit | default: 'original' | escape }}">
+    <a data-post-photo href="{{ photo.src | relative_url }}" aria-label="View photograph: {{ photo.alt | escape }}">
+      <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | escape }}" {% if photo.width and photo.height %}width="{{ photo.width }}" height="{{ photo.height }}"{% endif %} loading="lazy" decoding="async">
+    </a>
+    {% if photo.caption or photo.source or photo.credit %}<figcaption>{{ photo.caption | escape }}{% if photo.source %} <a href="{{ photo.source }}">Photo: {{ photo.credit | default: 'Source' | escape }}</a>.{% elsif photo.credit %} Photo: {{ photo.credit | escape }}.{% endif %}</figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+</div>
+{% endif %}

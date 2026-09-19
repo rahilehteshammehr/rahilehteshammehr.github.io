@@ -1,0 +1,89 @@
+title: Rahil Ehtesham Mehr
+name: Rahil Ehtesham Mehr
+description: "Physics undergraduate at Sharif University of Technology researching thin films and two-dimensional materials in experimental condensed matter physics."
+locale: en-US
+timezone: Asia/Tehran
+url: ""
+baseurl: ""
+repository: ""
+site_theme: default
+# Set these when a repository/domain is chosen. The Pages workflow supplies
+# url and baseurl automatically from the configured GitHub Pages destination.
+
+# Shared profile identity/contact content lives in _data/profile.json.
+# Identity fields below are retained for upstream compatibility.
+author:
+  name: Rahil Ehtesham Mehr
+  bio: Physics undergraduate
+  employer: Sharif University of Technology
+  location: Tehran, Iran
+  email: rahilehtesham82@gmail.com
+  avatar: ""
+  avatar_alt: Rahil Ehtesham Mehr
+  fide: https://ratings.fide.com/profile/12578398
+
+# PDF selection and the shared download URL live in _data/cv_pdf.json.
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+include: [_pages]
+collections:
+  projects:
+    output: true
+    permalink: /research/:path/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      nav: research
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      nav: beyond
+      permalink: /beyond-physics/:title/
+plugins:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+exclude:
+  - .cache
+  - .bundle
+  - .github
+  - .impeccable
+  - .agents
+  - .codex
+  - vendor
+  - node_modules
+  - prototypes
+  - research
+  - review
+  - docs
+  - cv-source
+  - scripts
+  - tmp
+  - main.tex
+  - PRODUCT.md
+  - DESIGN.md
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - requirements-pdf.txt
+  - _site-subpath

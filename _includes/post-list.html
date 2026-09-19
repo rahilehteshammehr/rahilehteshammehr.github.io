@@ -1,0 +1,15 @@
+<div class="post-list">
+{% for post in site.posts %}
+  <article class="post-entry{% if post.cover %} post-entry--with-photo{% endif %}">
+    {% if post.cover %}<a class="post-entry__image" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ post.cover | relative_url }}" alt="" {% if post.cover_width and post.cover_height %}width="{{ post.cover_width }}" height="{{ post.cover_height }}"{% endif %} loading="lazy"></a>{% endif %}
+    <div>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+      <p class="content-meta">{% if post.topic %}{{ post.topic | escape }} · {% endif %}{% if post.period %}{{ post.period | escape }}{% else %}{{ post.date | date: '%Y' }}{% endif %}</p>
+      <p>{{ post.summary | default: post.excerpt | strip_html | escape }}</p>
+      <a class="post-entry__read" href="{{ post.url | relative_url }}">Read the story<span class="visually-hidden">: {{ post.title | escape }}</span></a>
+    </div>
+  </article>
+{% else %}
+  <p>No stories published yet. Check back for future updates.</p>
+{% endfor %}
+</div>

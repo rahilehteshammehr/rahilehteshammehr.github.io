@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="academic-layout">
+  {% include author-profile.html %}
+  <main id="main" class="page" tabindex="-1">
+    <article class="page__inner-wrap">
+      {% if page.collection == 'posts' %}<a class="back-link" href="{{ '/beyond-physics/' | relative_url }}">All stories from beyond physics</a>{% endif %}
+      <header class="page-header">
+        <h1 class="page__title">{{ page.title | escape }}</h1>
+        {% if page.collection == 'posts' %}<p class="content-meta post-meta">{% if page.topic %}{{ page.topic | escape }} · {% endif %}{% if page.period %}{{ page.period | escape }}{% else %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>{% endif %}</p>{% endif %}
+      </header>
+      <div class="page__content">{{ content }}</div>
+    </article>
+  </main>
+</div>

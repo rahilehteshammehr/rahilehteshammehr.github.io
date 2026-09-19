@@ -1,0 +1,117 @@
+{
+  "updated": "September 2026",
+  "education": {
+    "degree": "Bachelor of Science in Physics",
+    "institution": "Sharif University of Technology",
+    "location": "Tehran, Iran",
+    "period": "2022 – expected 2027",
+    "gpa": "15.1/20",
+    "standing": "Top third of class"
+  },
+  "honors": [
+    {
+      "title": "University chess team",
+      "period": "November 2022 – present",
+      "detail": "Sharif University of Technology. Second place with the team at the 2025 Iranian National Inter-University Chess Championship. Second place at the 2024 National University Sports Olympiad; first place individually and second place as a team at the 2024 Regional Tournament."
+    },
+    {
+      "title": "National University Entrance Exam (Concours)",
+      "period": "Fall 2022",
+      "detail": "Ranked in the top 1% in Mathematics and Physics."
+    },
+    {
+      "title": "Professional chess player",
+      "period": "2010–2020",
+      "detail": "Over 60 regional and national titles."
+    }
+  ],
+  "teaching": [
+    {
+      "title": "Chess instructor",
+      "organization": "Shahmate chess school",
+      "period": "March 2023 – July 2026",
+      "detail": "Certified chess instructor."
+    },
+    {
+      "title": "Chess instructor",
+      "organization": "Private group tutoring",
+      "detail": "Taught chess fundamentals to elementary students, developing age-appropriate lessons in tactics, strategy, and competitive play, with an emphasis on critical thinking and problem-solving."
+    }
+  ],
+  "skills": [
+    {
+      "label": "Programming and analysis",
+      "value": "Python, Excel, LaTeX"
+    },
+    {
+      "label": "Experimental materials research",
+      "value": "Hands-on experience in thin-film and 2D-material fabrication and characterization"
+    },
+    {
+      "label": "Characterization",
+      "value": "Familiarity with SEM and XPS system operation"
+    },
+    {
+      "label": "Research practice",
+      "value": "Scientific report writing and team collaboration"
+    }
+  ],
+  "languages": [
+    {
+      "label": "Persian",
+      "value": "Native"
+    },
+    {
+      "label": "English",
+      "value": "Professional working proficiency"
+    }
+  ],
+  "courses": [
+    {
+      "name": "Vacuum Technology",
+      "grade": "17.7/20"
+    },
+    {
+      "name": "Laser Applications",
+      "grade": "16.5/20"
+    },
+    {
+      "name": "Electromagnetics",
+      "grade": "18/20"
+    },
+    {
+      "name": "Biophysics",
+      "grade": "17/20"
+    },
+    {
+      "name": "Physics 4",
+      "grade": "18/20"
+    },
+    {
+      "name": "Physics 4 Lab",
+      "grade": "19.2/20"
+    },
+    {
+      "name": "Introductory Programming",
+      "grade": "16.5/20"
+    },
+    {
+      "name": "Philosophy and Society",
+      "grade": "18.5/20"
+    }
+  ],
+  "service": [
+    {
+      "title": "Chess puzzle columnist",
+      "organization": "Sharif University Newspaper",
+      "period": "September 2025 – present",
+      "detail": "Contributes chess puzzles to the university newspaper."
+    },
+    {
+      "title": "Interdepartmental chess tournament director and organizer",
+      "organization": "Sharif University of Technology, Physics Department",
+      "period": "May 2024 and May 2025",
+      "detail": "Managed event logistics and administration for tournaments involving faculty and students."
+    }
+  ]
+}

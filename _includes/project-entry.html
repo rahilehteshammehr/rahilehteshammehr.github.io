@@ -1,0 +1,6 @@
+<article class="project-entry">
+  <h3><a href="{{ include.project.url | relative_url }}">{{ include.project.short_title | default: include.project.title | escape }}</a></h3>
+  <p class="project-meta">{{ include.project.period }}{% if include.show_category %}<span aria-hidden="true"> · </span>{{ include.project.category }}{% endif %}</p>
+  <p>{{ include.project.summary }}</p>
+  {% if include.project.supervisor %}<p class="supervisor">Supervisor: {% if include.project.supervisor_url and include.project.supervisor_url != '' %}<a href="{{ include.project.supervisor_url }}">{{ include.project.supervisor }}</a>{% else %}{{ include.project.supervisor }}{% endif %}</p>{% endif %}
+</article>

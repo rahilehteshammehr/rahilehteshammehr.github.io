@@ -1,0 +1,7 @@
+---
+layout: single
+---
+{{ content }}
+{% unless content contains 'class="post-gallery"' %}
+  {% include post-gallery.html label='Post photographs' %}
+{% endunless %}

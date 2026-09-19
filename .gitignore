@@ -1,0 +1,32 @@
+_site/
+_site-subpath/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+.cache/
+/vendor/
+node_modules/
+tmp/
+.DS_Store
+*.log
+review/*.png
+.impeccable/review/
+
+# Local authoring evidence, design experiments, and generated review artifacts.
+/main.tex
+/prototypes/
+/research/
+/review/
+/.impeccable/
+/PRODUCT.md
+/DESIGN.md
+/docs/beyond-physics-design.md
+
+# Python and local environment files.
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,21 @@
+<aside class="sidebar profile-sidebar" aria-label="Rahil's profile">
+  {% assign portrait = site.data.profile.avatar | default: site.author.avatar %}
+  {% if portrait and portrait != '' %}
+  <img class="profile-portrait" src="{{ portrait | relative_url }}" alt="{{ site.author.avatar_alt | escape }}" width="168" height="168">
+  {% else %}
+  <div class="profile-monogram" aria-hidden="true">RE</div>
+  {% endif %}
+  <div class="author__content">
+    <h2 class="author__name">{{ site.data.profile.name }}</h2>
+    <p class="author__bio">{{ site.author.bio }}<br>{{ site.data.profile.institution }}</p>
+  </div>
+  <ul class="profile-links">
+    <li>{% include icon.html name='pin' %}<span>{{ site.data.profile.location }}</span></li>
+    <li>{% include icon.html name='school' %}<span>{{ site.data.profile.graduation_label }}</span></li>
+    <li><a href="mailto:{{ site.data.profile.email }}">{% include icon.html name='mail' %}Email</a></li>
+    {% if site.data.profile.linkedin %}<li><a href="{{ site.data.profile.linkedin | escape }}">{% include icon.html name='linkedin' %}LinkedIn</a></li>{% endif %}
+    <li><a href="{{ site.data.cv_pdf.published_file | relative_url }}">{% include icon.html name='file' %}Download CV <span class="file-type">(PDF)</span></a></li>
+    <li><a href="{{ site.author.fide }}">{% include icon.html name='chess' %}FIDE chess profile</a></li>
+  </ul>
+  {% if page.show_news %}{% include recent-news.html %}{% endif %}
+</aside>
