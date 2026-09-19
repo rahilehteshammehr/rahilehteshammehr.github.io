@@ -27,8 +27,20 @@ filename = f'{args.date.isoformat()}-{slug}.md' if args.kind == 'post' else f'{s
 target = folder / filename
 if args.kind == 'post' and any(folder.glob(f'????-??-??-{slug}.md')):
     parser.error(f'A post already uses the URL /beyond-physics/{slug}/. Choose another --slug.')
-template = f'photo-{args.kind}' if args.photos else args.kind
-content = (ROOT / 'docs/templates' / f'{template}.md').read_text()
+content = (ROOT / 'scripts/templates' / f'{args.kind}.md').read_text()
+if args.photos:
+    photo_settings = '''gallery:
+  layout: grid
+  columns: 2
+  width: full
+  fit: original
+photos:
+  - src: /assets/images/your-story/photo.jpg
+    alt: "Describe the photograph."
+    caption: "Your caption."
+'''
+    header, body = content[4:].split('---', 1)
+    content = '---\n' + header + photo_settings + '---' + body
 content = re.sub(r'^title: .*$', lambda _: 'title: ' + json.dumps(args.title, ensure_ascii=False), content, count=1, flags=re.M)
 if 'published: false' not in content.split('---')[1]:
     content = content.replace('---\n', '---\npublished: false\n', 1)

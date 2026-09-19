@@ -63,7 +63,7 @@ for path, d in pages.items():
         if url.fragment and target in pages:
             assert unquote(url.fragment) in pages[target].ids, (path, f'Broken fragment: {reference}')
         checked += 1
-for private in ['main.tex','prototypes','research/template-research.md','scripts','docs','cv-source','review','PRODUCT.md','DESIGN.md','.cache','Gemfile']:
+for private in ['main.tex','prototypes','research/template-research.md','scripts','docs','_theme','README.md','LICENSE','cv-source','review','PRODUCT.md','DESIGN.md','.cache','Gemfile']:
     assert not (root / private).exists(), f'Non-public file leaked: {private}'
 assert public_cv.read_bytes().startswith(b'%PDF'), 'Invalid CV'
 expected_cv = manual_cv if cv_settings['mode'] == 'manual' else cv_output

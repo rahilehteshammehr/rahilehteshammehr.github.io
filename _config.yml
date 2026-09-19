@@ -1,26 +1,13 @@
 title: Rahil Ehtesham Mehr
-name: Rahil Ehtesham Mehr
 description: "Physics undergraduate at Sharif University of Technology researching thin films and two-dimensional materials in experimental condensed matter physics."
 locale: en-US
 timezone: Asia/Tehran
 url: ""
 baseurl: ""
-repository: ""
-site_theme: default
-# Set these when a repository/domain is chosen. The Pages workflow supplies
-# url and baseurl automatically from the configured GitHub Pages destination.
-
-# Shared profile identity/contact content lives in _data/profile.json.
-# Identity fields below are retained for upstream compatibility.
-author:
-  name: Rahil Ehtesham Mehr
-  bio: Physics undergraduate
-  employer: Sharif University of Technology
-  location: Tehran, Iran
-  email: rahilehtesham82@gmail.com
-  avatar: ""
-  avatar_alt: Rahil Ehtesham Mehr
-  fide: https://ratings.fide.com/profile/12578398
+# GitHub Pages supplies url and baseurl when publishing.
+# Edit personal details in _data/profile.json.
+layouts_dir: _theme/layouts
+includes_dir: _theme/includes
 
 # PDF selection and the shared download URL live in _data/cv_pdf.json.
 markdown: kramdown
@@ -36,7 +23,6 @@ defaults:
       path: ""
     values:
       layout: single
-      author_profile: true
   - scope:
       path: ""
       type: projects
@@ -53,7 +39,7 @@ defaults:
 plugins:
   - jekyll-sitemap
 sass:
-  sass_dir: _sass
+  sass_dir: _theme/styles
   style: compressed
 kramdown:
   input: GFM
@@ -73,6 +59,7 @@ exclude:
   - research
   - review
   - docs
+  - _theme
   - cv-source
   - scripts
   - tmp

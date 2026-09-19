@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% capture document_title %}{% unless page.url == '/' %}{{ page.title }} | {% endunless %}{{ site.title }}{% endcapture %}
+<title>{{ document_title | strip | escape }}</title>
+<meta name="description" content="{{ page.description | default: page.summary | default: site.description | strip_html | strip_newlines | escape }}">
+<meta name="author" content="{{ site.data.profile.name | escape }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#30373e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ document_title | strip | escape }}">
+<meta property="og:description" content="{{ page.description | default: page.summary | default: site.description | strip_html | strip_newlines | escape }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+{% if site.url != '' %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{% endif %}
+{% if page.noindex %}<meta name="robots" content="noindex,follow">{% endif %}
+<link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfilePage","name":{{ document_title | strip | jsonify }},"mainEntity":{"@type":"Person","name":{{ site.data.profile.name | jsonify }},"description":{{ site.description | jsonify }},"affiliation":{"@type":"CollegeOrUniversity","name":{{ site.data.profile.institution | jsonify }}},"sameAs":[{{ site.data.profile.fide | jsonify }}{% if site.data.profile.linkedin %},{{ site.data.profile.linkedin | jsonify }}{% endif %}]}}
+</script>

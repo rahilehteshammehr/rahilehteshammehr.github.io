@@ -20,5 +20,8 @@
   "personal": "Beyond physics, I’m a [FIDE-rated chess player][fide-profile], a member of Sharif’s university chess team, and a certified chess instructor. I taught at Shahmate chess school from March 2023 to July 2026. Competitive chess has shaped my analytical thinking, strategic decision-making, and approach to complex problems. I also organize university tournaments and contribute chess puzzles to the university newspaper. Away from the board, I enjoy running, skating, karate, cinema, and tea.",
   "highlight": "I am currently looking for graduate-level positions in experimental physics for the 2027 cohort.",
   "graduation_label": "B.Sc. expected 2027",
-  "avatar": "/assets/images/rahil-ehtesham-mehr.jpeg"
+  "avatar": "/assets/images/rahil-ehtesham-mehr.jpeg",
+  "role": "Physics undergraduate",
+  "avatar_alt": "Rahil Ehtesham Mehr",
+  "fide": "https://ratings.fide.com/profile/12578398"
 }

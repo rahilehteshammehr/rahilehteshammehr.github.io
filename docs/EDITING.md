@@ -1,198 +1,88 @@
-# Working with the website
+# Updating the website
 
-This is a file-based Jekyll website. Edit its Markdown, JSON, and YAML files in a text editor, preview locally, then publish the changes through GitHub. There is no separate admin dashboard, database, or subscription. Everyday content edits do not require HTML or CSS.
+You can make everyday updates on GitHub using your browser. You need to be signed in with permission to edit this repository. Publishing must be [set up once](DEVELOPMENT.md#publishing-setup).
 
-## Your usual workflow
+## Make a small change
 
-Open a terminal in this project folder. On this computer, setup is already available:
+1. Open the file you want to change using the table below.
+2. Click the pencil icon to edit it. Change the text, keeping the surrounding punctuation and spacing.
+3. Click **Commit changes**, write a short description such as “Update research interests,” and save to `main`. A commit is a saved version of your changes.
+4. Open the repository’s **Actions** tab. Wait for **Build and deploy website** to finish successfully, then visit your website and check the changed page.
 
-```sh
-npm run dev
-```
+If GitHub requires a pull request, save to a new branch, open the pull request, and merge it after the checks pass. A pull request is a proposed change awaiting review. A green build only publishes when Pages has been configured; the website address is in **Settings → Pages**.
 
-Visit [the local preview](http://127.0.0.1:4000/). Save an edit, wait for the terminal to say the site regenerated, and refresh the browser. Stop the server with **Control-C**. Restart it after changing `_config.yml`. If port 4000 is already in use, use the running preview or stop its terminal before starting another one.
-
-Before publishing:
-
-```sh
-npm run validate
-```
-
-This builds the site and checks page structure, local links, images, section links, the PDF download, the sitemap, and excluded source files. A successful check does not assess factual accuracy, external website availability, or visual appearance: also review your changed pages, both themes, and a narrow browser window.
-
-On another computer, install Node/npm, Python 3, Ruby 3.2+ (3.3 recommended), and Bundler, then run `npm run setup` and `npm run setup:cv` (the latter is needed for auto-generated PDFs). The ignored `.cache` and `vendor` folders are local dependencies, not website content.
-
-## Where to edit
-
-| What you want to change | Source |
+| What you want to update | Where to edit |
 | --- | --- |
-| Intro paragraphs, highlighted message, interests, personal paragraph, name, email, affiliation, location, LinkedIn, portrait, graduation label | `_data/profile.json` |
-| Education, awards, teaching, skills, languages, courses, service, CV update date | `_data/cv.json` |
-| PDF mode and manual PDF source | `_data/cv_pdf.json` |
-| Research/project summary and detail page | Its file in `_projects/` |
-| Story or photographs | Its file in `_posts/`; image files in `assets/images/` |
-| Three newest homepage news items | `_data/news.yml` |
-| About contact paragraph, research introduction, other page-specific text | `_pages/` |
-| Navigation labels and links | `_data/navigation.yml` |
-| Site title, search description, sidebar role, FIDE link, portrait alt text, domain settings | `_config.yml` |
-| Colors, spacing, typography, layout | `_sass/_rahil.scss` |
+| Introduction, interests, highlighted message, contact links, portrait, sidebar role | [`_data/profile.json`](../_data/profile.json) |
+| Education, awards, teaching, skills, coursework, service, CV update date | [`_data/cv.json`](../_data/cv.json) |
+| Research/project descriptions | The matching file in [`_projects/`](../_projects/) |
+| Beyond Physics stories | The matching file in [`_posts/`](../_posts/) |
+| Homepage news | [`_data/news.yml`](../_data/news.yml) |
+| Downloadable CV choice | [`_data/cv_pdf.json`](../_data/cv_pdf.json) |
 
-`profile.json` is the live source of contact details for both the website and auto-generated CV. The author identity fields retained in `_config.yml` are upstream compatibility values. `title` still controls the masthead and browser title. Education details and `graduation_label` describe different display contexts; update both when graduation changes.
+In `.json` files, edit the text between double quotes. Keep commas between entries, with no comma after the last entry. To put quotation marks inside text, write `\"`. In `.md` and `.yml` files, preserve indentation and use spaces, not tabs.
 
-Never edit `_site/` or `_site-subpath/`: they are generated and overwritten on the next build. Historical prototypes and the original résumé source stay on the original authoring computer and are not part of the repository. The active website and automatic CV use the Markdown and JSON files described above.
+Set `highlight` to `""` to hide the highlighted homepage message. When graduation details change, update the education entry in `cv.json` and the graduation labels in `profile.json`.
 
-## Feature a current-focus message
+## Add a story or research project
 
-Edit `highlight` in `_data/profile.json`:
+1. Open the [story template](../scripts/templates/post.md) or [project template](../scripts/templates/project.md), then click **Code** to see and copy its contents.
+2. Open [`_posts/`](../_posts/) for a story or [`_projects/`](../_projects/) for a project. Choose **Add file → Create new file**.
+3. Name a story `YYYY-MM-DD-short-title.md`, using its publication date. Name a project `short-title.md`. Use lowercase letters and hyphens, with a unique filename.
+4. Paste the template, replace its example text, and keep the two `---` lines. The lines between them are the entry’s settings; write the main text below the second line.
+5. Remove `published: false` when ready, then save with **Commit changes**. Stories and projects appear in their lists automatically.
 
-```json
-"highlight": "I am currently looking for graduate-level positions in experimental physics for the 2027 cohort."
-```
+For projects, use exactly `Undergraduate research` or `Academic project` as the category. A smaller `order` number appears first. The summary also appears in the automatic PDF CV. Optional supervisor fields can be copied from an existing project.
 
-This optional message appears in bold on a subtle background below the About introduction, above the contact links. Use plain text; bold styling is automatic. Replace it whenever your focus changes. Set `"highlight": ""` or remove the field to hide it entirely. It appears only on the homepage and is not included in the CV.
+`published: false` hides an entry from the website, but its file remains visible in this public repository. Future-dated stories stay hidden until a build on or after that date; they do not publish on a timer. Keep an existing filename when changing a title so old links continue to work.
 
-## Add a post
-
-```sh
-npm run new:post -- "My new story"
-```
-
-For photographs:
-
-```sh
-npm run new:post -- "A tournament weekend" --photos
-```
-
-The command prints the new filename. Open it, replace the summary and body, and keep the `---` lines around the settings at the top. Change the date using `--date 2026-09-19` if needed; by default, it uses your computer's current date.
-
-Posts are automatically listed under **Beyond Physics**, newest first. No navigation edits are needed. The filename slug controls the URL; changing only the displayed title preserves links. An optional `--slug my-story` sets a specific slug. Existing files and duplicate post slugs are never overwritten.
-
-## Add a research project
-
-```sh
-npm run new:project -- "My new project"
-```
-
-To start with a photo gallery, use `npm run new:project -- "My new project" --photos`. Replace the example image paths, descriptions, and captions. Existing projects can add the same `photos` and optional `gallery` settings described below.
-
-Fill in the front matter:
-
-- `title`: full project title; optional `short_title` overrides it in listings.
-- `category`: exactly `Undergraduate research` or `Academic project`.
-- `period`: a readable date or period, such as `Fall 2026`.
-- `field`: field of study.
-- `summary`: plain text used in listings and the PDF. Keep it concise.
-- `order`: a number; smaller numbers appear first within each category.
-- `topics`: a list such as `["Thin films", "Materials"]`, or `[]`.
-- Optional `supervisor` and `supervisor_url`: omit either if unavailable.
-
-Write the full description below the second `---`. Published undergraduate research appears on About, Research & Projects, and the web CV; academic projects appear on Research & Projects and the web CV. Regenerate the PDF to include the new entry there.
-
-## Drafts and future dates
-
-New content starts with `published: false`, so normal builds and deployment omit it. To preview drafts, stop the normal preview server and run:
-
-```sh
-npm run dev:drafts
-```
-
-This includes unpublished and future-dated content on your computer. Remove `published: false` when ready, and make sure a post's date is not in the future. Run `npm run validate` to check the normal public build before publishing.
-
-A future date is **not an automatic publishing schedule**. A static site only changes on a new build: push a change or run the deployment workflow after the date arrives. Draft projects are also excluded from the generated PDF.
+Use `## Heading`, `**bold text**`, `- list item`, and `[link text](https://example.com)` for simple formatting. The settings already supply the page title.
 
 ## Add photographs
 
-Copy photos into a folder such as `assets/images/my-story/`. Use lowercase filenames with hyphens. Compress large camera originals before adding them; keep enough resolution for the full-screen viewer.
-
-In the post or project's front matter, add a `photos` list or replace the example paths and descriptions:
+Open [`assets/images/`](../assets/images/) and use **Add file → Upload files** to upload your photos. Use filenames such as `chess-team.jpg`. Then add this above the closing `---` in a story or project:
 
 ```yaml
 photos:
-  - src: /assets/images/my-story/team.jpg
-    alt: "The university chess team beside the tournament boards."
-    caption: "A caption with the event and date."
+  - src: /assets/images/chess-team.jpg
+    alt: "The chess team beside the tournament boards."
+    caption: "Our team at the tournament."
 ```
 
-Describe what is visible in `alt`; use `caption` for context. Add optional `credit` and `source` for a source-page link. Optional image `width` and `height` reserve space while loading. The shared gallery and viewer handle the presentation automatically, below the post or project description. Project photos appear on the project detail page.
+Repeat the three lines starting with `- src` for each photo. `alt` describes what is visible for people using a screen reader; `caption` is the text shown below the photo. Check that the filename matches exactly, including capitalization. For a credited image, add `credit: "Photographer or organization"` and `source: "https://example.com/original-page"` below its caption, at the same indentation.
 
-Gallery defaults can be set in the same front matter:
+Photos appear below the story automatically and open in a larger viewer when clicked. See [optional gallery settings](DEVELOPMENT.md#gallery-settings) for sizing or placing groups between paragraphs.
+
+To replace the profile portrait, upload the new image and change `avatar` in `profile.json` to its `/assets/images/...` path. Update `avatar_alt` to describe it.
+
+## Add a news update
+
+Copy an entry in [`_data/news.yml`](../_data/news.yml), then change its text:
 
 ```yaml
-gallery:
-  layout: grid
-  columns: 2
-  width: full
-  fit: original
+- date: "2026-09"
+  title: "A short update about my work."
+  url: /research/
 ```
 
-Use `fit: original` to show whole photos; `square`, `landscape`, and `portrait` crop thumbnails only. Use `width: small` or `medium` for narrower galleries. The [README gallery reference](../README.md#control-photo-size-and-layout) covers grouped galleries and per-photo overrides.
+Keep the date in `YYYY-MM` format and in quotes. Omit the `url` line for an update without a link. The three newest entries appear on the homepage automatically.
 
-## Add news or a standalone page
+## Update the CV
 
-For news, copy a record in `_data/news.yml`. Use a quoted `YYYY-MM` date, a title, and an optional URL. The newest three appear automatically. Internal URLs start with `/`. Only publish news with confirmed names and dates; the unfinished research announcement has been removed.
+**By default, the PDF updates automatically when the website publishes.** Edit `profile.json`, `cv.json`, or the project summaries, and update the `updated` date in `cv.json`. Open the downloaded PDF afterward to check its pages.
 
-For a standalone page:
+To use a PDF you prepared yourself:
 
-```sh
-npm run new:page -- "My new page"
-```
+1. Use **Add file → Create new file** at the repository’s top level to create `cv-source/.gitkeep`. Leave its contents empty and save it. This creates the folder if it does not already exist.
+2. Open `cv-source/`, choose **Add file → Upload files**, and upload your PDF as `manual.pdf`.
+3. In [`_data/cv_pdf.json`](../_data/cv_pdf.json), change `"mode": "auto"` to `"mode": "manual"`, then save.
 
-Edit its title, description, and Markdown. It inherits the shared design. Link to it from an existing page, or add a navigation record:
+Leave the other settings unchanged. To replace this PDF later, upload a new `manual.pdf` to the same folder. Change the mode back to `auto` to resume automatic generation. The CV page itself always uses the website data; uploading a PDF changes the download only. Uploaded files are public in this repository.
 
-```yaml
-  - title: My new page
-    url: /my-new-page/
-    key: my-new-page
-```
+## If something goes wrong
 
-For a navigation item, also add `nav: my-new-page` to the page's front matter so the active link is highlighted. Keep the main menu short; ordinary stories and projects already have listings. Ensure each standalone page has a unique `permalink`.
+- **The page has not changed:** wait for Actions to finish, refresh the site, and check the entry’s date and `published` setting.
+- **A check fails:** open the failed run in Actions. Check recent edits for missing quotes or commas, incorrect indentation, or a misspelled image path. Fix the file and save again; publishing retries automatically.
+- **You need the old text:** open the file’s **History**, find the earlier version, and copy the original text back through the editor.
 
-## Choose and update the downloadable CV
-
-Edit `_data/cv_pdf.json`. Only change `mode` to switch:
-
-```json
-{
-  "mode": "auto",
-  "manual_file": "cv-source/manual.pdf",
-  "published_file": "/files/Rahil_Ehtesham_Mehr_CV.pdf"
-}
-```
-
-- **Auto:** keep `"mode": "auto"` to generate the PDF from profile data, CV data, and project summaries. Run `npm run setup:cv` once per computer to install its dependencies.
-- **Manual:** compile your LaTeX CV yourself, put the resulting PDF at `cv-source/manual.pdf`, and set `"mode": "manual"`. A different filename is fine if you update `manual_file` to match (inside `cv-source/`). Commit the PDF along with the setting so deployment has access to it. No LaTeX installation is needed by the website.
-
-Keep `published_file` unchanged to preserve existing public links. All PDF downloads use this one setting, including the sidebar, About, and CV page. The build copies your manual PDF byte-for-byte and never alters the original. Neither the source folder nor the intermediate auto-generated PDF is included in the website output.
-
-Then run:
-
-```sh
-npm run validate
-```
-
-Builds, preview-server startup, and GitHub deployment prepare whichever mode is selected. **Restart `npm run dev` after changing modes.** While the preview server is running, `npm run cv` refreshes the selected PDF after content changes or replacing your manual file. A missing/non-PDF manual file or invalid mode stops the build with an error rather than publishing the wrong version.
-
-In auto mode, update `updated` in `_data/cv.json` yourself. The web CV and **Print this page** always use website data; this switch controls the downloadable PDF only. Open `files/Rahil_Ehtesham_Mehr_CV.pdf` to check the selected result. Review every page after substantial additions: auto-generated content can grow beyond the current two pages.
-
-## Formatting and troubleshooting
-
-Markdown supports `## Section`, `**bold**`, `- list items`, and `[link text](https://example.com)`. Use the page's front-matter title rather than adding another `# Title`. For links within this site, use the deployment-safe form:
-
-```liquid
-[See research]({{ '/research/' | relative_url }})
-![Photo description]({{ '/assets/images/my-story/team.jpg' | relative_url }})
-```
-
-JSON requires double quotes, commas between items, and no trailing comma after the last item. YAML requires spaces instead of tabs; quote titles containing a colon. Dates in news must be quoted. In JSON strings, write `\"` for a literal quotation mark. Copy a nearby valid entry and change its values.
-
-- **Edit not appearing:** confirm the source file, refresh the browser, inspect the terminal for errors, and check `published` and the post date.
-- **Missing photo:** verify capitalization and the exact file path; run `npm run validate`.
-- **Project missing from listings:** verify its exact category and `published` setting.
-- **PDF looks old:** run `npm run cv`, rebuild, and reopen the PDF.
-- **Content looks cramped:** shorten listing summaries while keeping detail in the Markdown body. Preview mobile and both themes.
-
-## Publish
-
-The source transfer repository is `theablemo/rahilwebsite`; the final deployment will use Rahil’s own GitHub repository. The existing GitHub Pages workflow builds, prepares the selected PDF, validates, and deploys when changes reach `main`, once the repository has Pages enabled with GitHub Actions. See [publishing instructions](../README.md#publish-with-github-pages).
-
-After setup, you can edit these same files in GitHub's web editor or locally. Use a branch/pull request to review changes before merging into `main`. Version control lets you restore earlier content. Excluded files do not enter the website build, but a **public repository still exposes its tracked source files**: review source documents and personal material before choosing repository visibility.
+The `_theme/` and `scripts/` folders contain the website’s machinery. Everyday content updates use the files above. For changes to the menu, page layout, or hosting, use the [maintenance guide](DEVELOPMENT.md).

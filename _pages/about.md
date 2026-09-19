@@ -34,7 +34,7 @@ show_news: true
 
 {{ site.data.profile.personal }}
 
-[fide-profile]: {{ site.author.fide }}
+[fide-profile]: {{ site.data.profile.fide }}
 
 ## Get in touch
 
