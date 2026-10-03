@@ -8,18 +8,18 @@
   "educationDates": "2022 – expected 2027",
   "interests": [
     "Experimental condensed matter physics",
-    "Nanoscale materials and devices",
-    "Thin-film synthesis and characterization",
-    "Two-dimensional materials and heterostructures"
+    "Two-dimensional materials and heterostructures",
+    "Perovskite solar cells and thin-film photovoltaics",
+    "Thin-film deposition and characterization",
+    "Nanoscale materials and devices"
   ],
   "bio": [
-    "I’m a physics undergraduate at Sharif University of Technology, interested in experimental condensed matter physics, thin films, two-dimensional materials, and materials science.",
-    "My current research focuses on thin films and two-dimensional materials, where I’m gaining hands-on experience in material fabrication and characterization. I’m interested in how material properties relate to structure and interfaces, and in their potential applications in emerging materials and devices.",
-    "My research background also includes computational modeling of light–tissue interactions with Dr. Rasoul Sedighi, including photon transport in multilayer skin models. I welcome opportunities to exchange ideas, discuss research, and collaborate."
+    "I'm a physics undergraduate at Sharif University of Technology working in experimental condensed matter physics. What draws me to the field is the link between how a material is made and what it can do: how growth, interfaces, and thickness, down to a single atomic layer, determine its properties and its potential in devices.",
+    "My research follows two directions. In photovoltaics, I fabricate perovskite solar cells at the Nanoparticles and Coatings Lab (NCL), working hands-on with solution-based thin-film deposition, where small changes in processing show up directly in film quality and device performance. In two-dimensional materials, I work on a gold-assisted exfoliation method that uses the strong Au–chalcogen bond to separate large-area, single-crystal monolayers of transition metal dichalcogenides. The aim is to move from microscopic flakes toward macroscopic samples suitable for quantum materials and device research.",
+    "I also have a computational background in biomedical optics, where I modeled laser–tissue interactions and simulated photon transport in multilayer skin. Combining modeling with fabrication and characterization shapes how I design and interpret experiments. More about my research, teaching, and background is in my CV."
   ],
   "personal": "Beyond physics, I’m a [FIDE-rated chess player][fide-profile], a member of Sharif’s university chess team, and a certified chess instructor. I taught at Shahmate chess school from March 2023 to July 2026. Competitive chess has shaped my analytical thinking, strategic decision-making, and approach to complex problems. I also organize university tournaments and contribute chess puzzles to the university newspaper. Away from the board, I enjoy running, skating, karate, cinema, and tea.",
-  "highlight": "I am currently looking for graduate-level positions in experimental physics for the 2027 cohort.",
-  "graduation_label": "B.Sc. expected 2027",
+  "highlight": "I am looking for graduate positions in experimental condensed matter physics, starting in 2027.",  "graduation_label": "B.Sc. expected 2027",
   "avatar": "/assets/images/rahil-ehtesham-mehr.jpeg",
   "role": "Physics undergraduate",
   "avatar_alt": "Rahil Ehtesham Mehr",
