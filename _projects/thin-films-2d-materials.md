@@ -1,14 +1,15 @@
 ---
-title: "Thin films and two-dimensional materials"
-short_title: "Thin films and two-dimensional materials"
+title: "Gold-assisted exfoliation of large-area monolayer TMDs"
+short_title: "Large-area monolayer TMDs"
 category: "Undergraduate research"
-period: "Current research"
-field: "Experimental condensed matter physics"
-summary: "Experimental research in thin films and two-dimensional materials, gaining hands-on experience in material fabrication and characterization."
-topics: ["Thin films", "Two-dimensional materials", "Fabrication and characterization"]
-order: 0
+period: "Dec 2024 – present"
+supervisor: "Dr. Ali Khademi"
+field: "Two-dimensional materials"
+summary: "Developing a gold-assisted exfoliation method to produce large-area, single-crystal monolayers of transition metal dichalcogenides (TMDs)."
+topics: ["Two-dimensional materials", "TMDs", "Nanofabrication"]
+order: 1
 ---
 
-My current work focuses on experimental techniques for fabricating and characterizing thin films and two-dimensional materials.
+Mechanical exfoliation with Scotch tape produces high-quality monolayers, but usually only as small flakes, which limits their use in devices and large-area measurements.
 
-I’m particularly interested in the relationship between material properties, structure, and interfaces, and in exploring their potential applications in emerging materials and devices.
+In this project, I work on a gold-assisted exfoliation technique that uses the strong adhesion between gold and chalcogen atoms to overcome the weak van der Waals bonding between layers. This allows large-area, single-crystal TMD monolayers to be exfoliated deterministically and with high yield, with quality comparable to Scotch-tape exfoliation, making them suitable for quantum materials and device research.
