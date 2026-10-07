@@ -1,11 +1,11 @@
 {
-  "updated": "September 2026",
+  "updated": "October 2026",
   "education": {
     "degree": "Bachelor of Science in Physics",
     "institution": "Sharif University of Technology",
     "location": "Tehran, Iran",
     "period": "2022 – expected 2027",
-    "gpa": "15.1/20",
+    "gpa": "15.98/20 overall; 17.44/20 over the last two years",
     "standing": "Top third of class"
   },
   "honors": [
@@ -22,10 +22,16 @@
     {
       "title": "Professional chess player",
       "period": "2010–2020",
-      "detail": "Over 60 regional and national titles."
+      "detail": "FIDE-rated player with over 60 regional and national titles."
     }
   ],
   "teaching": [
+    {
+      "title": "Teaching assistant, Vacuum Technology",
+      "organization": "Sharif University of Technology (Dr. Omid Akhavan)",
+      "period": "Fall 2026",
+      "detail": "Designing and grading homework assignments and holding weekly problem-solving sessions."
+    },
     {
       "title": "Chess instructor",
       "organization": "Shahmate chess school",
@@ -40,16 +46,20 @@
   ],
   "skills": [
     {
-      "label": "Programming and analysis",
-      "value": "Python, Excel, LaTeX"
-    },
-    {
-      "label": "Experimental materials research",
-      "value": "Hands-on experience in thin-film and 2D-material fabrication and characterization"
+      "label": "Thin-film deposition",
+      "value": "Spin coating, blade coating"
     },
     {
       "label": "Characterization",
-      "value": "Familiarity with SEM and XPS system operation"
+      "value": "I–V measurements of solar cells; familiarity with SEM and XPS system operation"
+    },
+    {
+      "label": "Laboratory practice",
+      "value": "Cleanroom experience, sample preparation, vacuum system operation"
+    },
+    {
+      "label": "Programming and analysis",
+      "value": "Python, Excel, LaTeX"
     },
     {
       "label": "Research practice",
@@ -68,36 +78,36 @@
   ],
   "courses": [
     {
-      "name": "Vacuum Technology",
-      "grade": "17.7/20"
+      "name": "Thin Films",
+      "grade": "20/20"
     },
     {
-      "name": "Laser Applications",
-      "grade": "16.5/20"
-    },
-    {
-      "name": "Electromagnetics",
-      "grade": "18/20"
-    },
-    {
-      "name": "Biophysics",
-      "grade": "17/20"
-    },
-    {
-      "name": "Physics 4",
-      "grade": "18/20"
+      "name": "Statistical Mechanics",
+      "grade": "20/20"
     },
     {
       "name": "Physics 4 Lab",
       "grade": "19.2/20"
     },
     {
-      "name": "Introductory Programming",
-      "grade": "16.5/20"
+      "name": "Electronics",
+      "grade": "19/20"
     },
     {
-      "name": "Philosophy and Society",
-      "grade": "18.5/20"
+      "name": "Electromagnetics",
+      "grade": "18/20"
+    },
+    {
+      "name": "Physics 4",
+      "grade": "18/20"
+    },
+    {
+      "name": "Vacuum Technology",
+      "grade": "17.7/20"
+    },
+    {
+      "name": "Biophysics",
+      "grade": "17/20"
     }
   ],
   "service": [
@@ -110,8 +120,8 @@
     {
       "title": "Interdepartmental chess tournament director and organizer",
       "organization": "Sharif University of Technology, Physics Department",
-      "period": "May 2024 and May 2025",
-      "detail": "Managed event logistics and administration for tournaments involving faculty and students."
+      "period": "May 2024 – present",
+      "detail": "Organizing an annual chess tournament for faculty and students, managing event logistics and administration."
     }
   ]
 }
